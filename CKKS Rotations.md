@@ -10,8 +10,8 @@ share: "true"
 
 ## Background - decoding
 - motivation: encode vector of complex numbers into polynomial in $\mathbb{Z}$.
-- plaintext $m(X)$ is decoded to slots by $[m(z_1),m(z_2),\ldots,m(z_n)]$ where $z_i$ are the $2n$-th primitive roots of unity. For every $z_i$ the roots contain it's conjugate $z_j$. So only half of the roots are used and they decode into $n/2$ slots are used. let call them $\hat{z}_1,\ldots,\hat{z}_{n/2}$. 
-- 
+- plaintext $m(X)$ is decoded to slots by $[m(z_1),m(z_2),\ldots,m(z_n)]$ where $z_i$ are the $2n$-th primitive roots of unity. For every $z_i$ the roots contain it's conjugate $z_j$. So only half of the roots are used and they decode into $n/2$ slots are used. let call them $\hat{z}_{1}$
+- ,\ldots,\hat{z}_{n/2}$. 
 
 #### What is $ct(X^k)$ ?
 - $ct(X^k)=\big(b(X^k),a(X^k)\big)=\big[a(X^k)s(X^k)+m(X^k)+e(X^k),a(X^k)\big]\bmod Q$
@@ -19,14 +19,15 @@ share: "true"
 - $ct(X^k)$ is a valid [R-LWE ciphertext (RLWE)](./R-LWE%20ciphertext%20(RLWE).md) which  encrypts $m(X^k)$ w.r.t secret key $s(X^k)$.
 
 #### Is there $k$ s.t. the plaintext $m(X^k)$ is a rotation by one slot?
--   $m(X)$ encode the vector $\{m(\zeta^i) \}_{i\in \mathbb{Z}_{2n}^\times}$ where $\zeta:=e^{\frac{2\pi i}{2n}}$. In other words, the vector is computed by evaluating $m(X)$ in all $2n$-th primitive roots of unity. This is called the [Canonical mapping (CKKS encoding)](./Canonical%20mapping%20(CKKS%20encoding).md).
+-   $m(X)$ encode the vector $\{m(\zeta^i)\}_{i\in \mathbb{Z}_{2n}^\times}$ where $\zeta:=e^{\frac{2\pi i}{2n}}$. In other words, the vector is computed by evaluating $m(X)$ in all $2n$-th primitive roots of unity. This is called the [Canonical mapping (CKKS encoding)](./Canonical%20mapping%20(CKKS%20encoding).md).
 - The 2n-th primitive roots of unity are the following $\zeta^t$ where $\gcd(t,2n)=1$ in other words for all $t\in \mathbb{Z}_{2n}^\times$. 
 - Note: The primitive roots do not form a group (the unity is not included)
 - A theorem in group theory state that if $2n$ a power of 2 then $\mathbb{Z}_{2n}^\times\cong C_2\times C_{n/2}$ , see  [Multiplicative group of integers modulo n](./Multiplicative%20group%20of%20integers%20modulo%20n.md).
-- Let $k$ be a generator of the cyclic group $C_{N/2}$ which is a subgroup of $\mathbb{Z}_{2n}^\times$ i.e., $\mathbb{Z}_{2n}^\times=\{1,k,k^2,\ldots,k^{n/2-1},-1,-k,-k^2,\ldots,-k^{n/2-1}\}$
+- Let $k$ be a generator of the cyclic group $C_{n/2}$ which is a subgroup of $\mathbb{Z}_{2n}^\times$ i.e., $\mathbb{Z}_{2n}^\times=\{1,k,k^2,\ldots,k^{n/2-1},-1,-k,-k^2,\ldots,-k^{n/2-1}\}$
 -  We consider the powers of $\zeta$ that are associated with $\{1,k,k^2,\ldots,k^{n/2-1}\}$. The rest $n/2$ powers of $\zeta$ are their conjugates (because they are multiply by an involution) 
 -  Evaluating $m(X^k)$ with the ordered zeta's is the same as evaluating $m(X)$ by  the ordered zeta's rotated by one i.e., the slots are rotated by one.  replacing $X$ with $\zeta^k$ we get: 
 $$ \begin{align*}
+&m\big((\zeta)^k\big)=m\big(\zeta^k\big)\\
 &m\big((\zeta^k)^k\big)=m\big(\zeta^{k^2}\big)\\
 &m\big((\zeta^{k^2})^k\big)=m\big(\zeta^{k^3}\big)\\
 & \vdots\\
@@ -41,6 +42,7 @@ $$ \begin{align*}
 - In order to continue and use $ct^\prime$ in more computations it requires to have the same secret key of other ciphertext it "interact" with. This means we  should have $ct^\prime(X^k)=\big(b^\prime(X),a^\prime(X)\big)=\big[a^\prime(X)s(X)+m(X^k)+e^\prime(X),a^\prime(X)\big] \bmod Q$ 
 - We need to compute [key switching](./CKKS%20Key%20switching.md) $s(X^k)\rightarrow s(X)$ for $ct^\prime$ and get a new ciphertext $ct^{\prime\prime}$.
 
+#TODO: explain why it the same to compute x^k in both sides? is it because x^k is automorphism?
 #### Why CKKS use k=5 and not k=3?
 #TODO: find out why and summarize here.
 
