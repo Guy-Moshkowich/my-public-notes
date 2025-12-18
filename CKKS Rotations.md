@@ -10,7 +10,9 @@ share: "true"
 
 ## Background - decoding
 - motivation: encode vector of complex numbers into polynomial in $\mathbb{Z}$.
-- plaintext $m(X)$ is decoded to slots by $[m(z_1),m(z_2),\ldots,m(z_n)]$ where $z_i$ are the $2n$-th primitive roots of unity. For every $z_i$ the roots contain it's conjugate $z_j$. So only half of the roots are used and they decode into $n/2$ slots are used. let call them $\hat{z}_{1},\ldots,\hat{z}_{n/2}$. 
+- plaintext $m(X)$ is decoded to slots by $[m(z_1),m(z_2),\ldots,m(z_n)]$ where $z_i$ are the $2n$-th primitive roots of unity. For every $z_i$ the roots contain it's conjugate $z_j$. So only half of the roots are used and they decode into $n/2$ slots are used. let call them $\hat{z}_{1}$
+- $,\ldots,\hat{z}_{n/2}$. 
+
 
 #### What is $ct(X^k)$ ?
 - $ct(X^k)=\big(b(X^k),a(X^k)\big)=\big[a(X^k)s(X^k)+m(X^k)+e(X^k),a(X^k)\big]\bmod Q$
