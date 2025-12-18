@@ -19,7 +19,7 @@ share: "true"
 - $ct(X^k)$ is a valid [R-LWE ciphertext (RLWE)](./R-LWE%20ciphertext%20(RLWE).md) which  encrypts $m(X^k)$ w.r.t secret key $s(X^k)$.
 
 #### Is there $k$ s.t. the plaintext $m(X^k)$ is a rotation by one slot?
--   $m(X)$ encode the vector $\{ m(\zeta^i) \}_{i\in \mathbb{Z}_{2n}^\times}$ where $\zeta:=e^{\frac{2\pi i}{2n}}$. In other words, the vector is computed by evaluating $m(X)$ in all $2n$-th primitive roots of unity. This is called the [Canonical mapping (CKKS encoding)](./Canonical%20mapping%20(CKKS%20encoding).md).
+-   $m(X)$ encode the vector $\{m(\zeta^i) \}_{i\in \mathbb{Z}_{2n}^\times}$ where $\zeta:=e^{\frac{2\pi i}{2n}}$. In other words, the vector is computed by evaluating $m(X)$ in all $2n$-th primitive roots of unity. This is called the [Canonical mapping (CKKS encoding)](./Canonical%20mapping%20(CKKS%20encoding).md).
 - The 2n-th primitive roots of unity are the following $\zeta^t$ where $\gcd(t,2n)=1$ in other words for all $t\in \mathbb{Z}_{2n}^\times$. 
 - Note: The primitive roots do not form a group (the unity is not included)
 - A theorem in group theory state that if $2n$ a power of 2 then $\mathbb{Z}_{2n}^\times\cong C_2\times C_{n/2}$ , see  [Multiplicative group of integers modulo n](./Multiplicative%20group%20of%20integers%20modulo%20n.md).
