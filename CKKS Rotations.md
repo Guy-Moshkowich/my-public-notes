@@ -21,7 +21,7 @@ share: "true"
 -   $m(X)$ encode the vector $\{m(\zeta^i)\}_{i\in \mathbb{Z}_{2n}^\times}$ where $\zeta:=e^{\frac{2\pi i}{2n}}$. In other words, the vector is computed by evaluating $m(X)$ in all $2n$-th primitive roots of unity. This is called the [Canonical mapping (CKKS encoding)](./Canonical%20mapping%20(CKKS%20encoding).md).
 - The 2n-th primitive roots of unity are the following $\zeta^t$ where $\gcd(t,2n)=1$ in other words for all $t\in \mathbb{Z}_{2n}^\times$. 
 - Note: The primitive roots do not form a group (the unity is not included)
-- A theorem in group theory state that if $2n$ a power of 2 then $\mathbb{Z}_{2n}^\times\cong C_2\times C_{n/2}$ , see  [Multiplicative group of integers modulo n](./Multiplicative%20group%20of%20integers%20modulo%20n.md).
+- A theorem in group theory state that if $2n$ a power of 2 then $\mathbb{Z}\\_{2n}^\times\cong C_2\times C_{n/2}$ , see  [Multiplicative group of integers modulo n](./Multiplicative%20group%20of%20integers%20modulo%20n.md).
 - Let $k$ be a generator of the cyclic group $C_{n/2}$ which is a subgroup of $\mathbb{Z}_{2n}^\times$ i.e., $\mathbb{Z}_{2n}^\times=\{1,k,k^2,\ldots,k^{n/2-1},-1,-k,-k^2,\ldots,-k^{n/2-1}\}$
 -  We consider the powers of $\zeta$ that are associated with $\{1,k,k^2,\ldots,k^{n/2-1}\}$. The rest $n/2$ powers of $\zeta$ are their conjugates (because they are multiply by an involution) 
 -  Evaluating $m(X^k)$ with the ordered zeta's is the same as evaluating $m(X)$ by  the ordered zeta's rotated by one i.e., the slots are rotated by one.  replacing $X$ with $\zeta^k$ we get: 
