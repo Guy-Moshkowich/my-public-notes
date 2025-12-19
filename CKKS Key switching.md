@@ -82,15 +82,15 @@ $$ct\_0\- t=as\_{in}+m+e\-t=a^{\dagger\dagger}s\_{out}+m+e+e^{\dagger\dagger}$$
  where $a^{\dagger\dagger}:= \sum\_{i=0}^L a^{\dagger}\_i$ and $e^{\dagger\dagger}:=\sum\_{i=0}^L e\_i^\dagger$
 
 **Fourth idea**. The problem with the 3rd idea that you need more memory to store the extra switch keys and more computation is being done for each key switch. To balance this, the new idea is to use batches of $q\_i$'s, $Q\_j:=\prod\_{j\alpha}^{j(\alpha+1)} q\_i$  for decomposing $a$ to fewer smaller polynomials.
-Decompose $a$ by 
+1. Decompose $a$ by 
 
 $$ \big([a\cdot\hat{Q\_0}^{\-1}]\_{Q\_0},\ldots, [a\cdot\hat{Q\_k}^{\-1}]\_{Q\_k}\big)$$ 
  where $\hat{Q\_j}:=\prod\_{i\ne j}{Q\_i}$ and all components have small norm i.e., $\big|[a\cdot\hat{Q\_i}^{\-1}]\_{Q\_i}\big|< Q\_i$ for $i=0,\ldots,k$
    Note: $$a=\sum\_{j=0}^k [a\hat{Q}\_j^{\-1}]\_{Q\_j}\hat{Q}\_j \bmod Q $$
    note: an alternative is to decompose by $([a]\_{Q\_0},\ldots,[a]\_{Q\_k})$ 
-4. Set $P=\prod\_{i=0}^\alpha P\_i$ s.t $P\_i$ are primes and $|q\_i|<|P\_i|<\text{64 bits}$ for all $i$.
-5. Define switching keys by a set of ciphertexts $$\text{swk}^{(i)}\_{s\_{in}\rightarrow s\_{out}}:=(a^\*\_i\cdot  s\_{out}+ \hat{Q\_i}\cdot P\cdot s\_{in}+e^\*\_i, a^\*\_i) \bmod  PQ$$\*Note:\* An alternative, you can compute the decompose by only $[a]\_{Q\_i}$ and have $[\hat{Q\_i}^{\-1}]\_{Q\_i}$ multiply in the key which has the reduce the operations in the key switch i.e., $$\text{swk}^{(i)}\_{s\_{in}\rightarrow s\_{out}}:=(a^\*\_i\cdot  s\_{out}+ \hat{Q\_i} \cdot [\hat{Q\_i}^{\-1}]\_{Q\_i}\cdot P\cdot s\_{in}+e^\*\_i, a^\*\_i) \bmod  PQ$$
-6. mod\-up $[a\cdot\hat{Q\_i}^{\-1}]\_{Q\_i}$ to be modulo $P\cdot Q$ and multiply, we have
+2. Set $P=\prod\_{i=0}^\alpha P\_i$ s.t $P\_i$ are primes and $|q\_i|<|P\_i|<\text{64 bits}$ for all $i$.
+3. Define switching keys by a set of ciphertexts $$\text{swk}^{(i)}\_{s\_{in}\rightarrow s\_{out}}:=(a^\*\_i\cdot  s\_{out}+ \hat{Q\_i}\cdot P\cdot s\_{in}+e^\*\_i, a^\*\_i) \bmod  PQ$$\*Note:\* An alternative, you can compute the decompose by only $[a]\_{Q\_i}$ and have $[\hat{Q\_i}^{\-1}]\_{Q\_i}$ multiply in the key which has the reduce the operations in the key switch i.e., $$\text{swk}^{(i)}\_{s\_{in}\rightarrow s\_{out}}:=(a^\*\_i\cdot  s\_{out}+ \hat{Q\_i} \cdot [\hat{Q\_i}^{\-1}]\_{Q\_i}\cdot P\cdot s\_{in}+e^\*\_i, a^\*\_i) \bmod  PQ$$
+4. mod\-up $[a\cdot\hat{Q\_i}^{\-1}]\_{Q\_i}$ to be modulo $P\cdot Q$ and multiply, we have
 $$
 \begin{align}
 \big[[a\cdot\hat{Q\_i}^{\-1}]\_{Q\_i}\big]\_{PQ}\cdot \text{swk}^{(i)}\_{s\_{in}\rightarrow s\_{out}} &= 
@@ -100,10 +100,10 @@ P\cdot s\_{in}+ e^\*\_i[a\cdot\hat{Q\_i}^{\-1}]\_{Q\_i} , [a\cdot\hat{Q\_i}^{\-1
 \end{align}
 $$
 
-7. mod\_down to modulo Q
-8. add all results: $e\_i^{**}:=P^{\-1}\cdot e^\*\_i[a\cdot\hat{Q\_i}^{\-1}]\_{Q\_i}$, $a\_i^{**}:=P^{\-1}[a\cdot\hat{Q\_i}^{\-1}]\_{Q\_i}\cdot a^\*\_i$ 
-$$t = \sum\_{i=0}^L \big([a\cdot\hat{Q\_i}^{\-1}]\_{Q\_i}\cdot \text{swk}^{(i)}\_{s\_{in}\rightarrow s\_{out}}\big)= \sum\_{i=0}^L a^{**}\_i\cdot s\_{out}+ a\cdot s\_{in}+ \sum\_{i=0}^L e\_i^{**}$$
-9. subtract from original ciphertext: $$ct\_0\- t=as\_{in}+m+e\-t=a^{***}s\_{out}+m+e+e^{***}$$ where $a^{***}:= \sum\_{i=0}^L a^{**}\_i$ and $e^{***}:=\sum\_{i=0}^L e\_i^{**}$
+5. mod\_down to modulo Q
+6. add all results: $e\_i^\dagger:=P^{\-1}\cdot e^\*\_i[a\cdot\hat{Q\_i}^{\-1}]\_{Q\_i}$, $a\_i^\dagger:=P^{\-1}[a\cdot\hat{Q\_i}^{\-1}]\_{Q\_i}\cdot a^\*\_i$ 
+$$t = \sum\_{i=0}^L \big([a\cdot\hat{Q\_i}^{\-1}]\_{Q\_i}\cdot \text{swk}^{(i)}\_{s\_{in}\rightarrow s\_{out}}\big)= \sum\_{i=0}^L a^\dagger\_i\cdot s\_{out}+ a\cdot s\_{in}+ \sum\_{i=0}^L e\_i^\dagger$$
+7. subtract from original ciphertext: $$ct\_0\- t=as\_{in}+m+e\-t=a^{\dagger\dagger}s\_{out}+m+e+e^{\dagger\dagger}$$ where $a^{\dagger\dagger}:= \sum\_{i=0}^L a^{\dagger}\_i$ and $e^{\dagger\dagger}:=\sum\_{i=0}^L e\_i^{\dagger}$
 
 ## Equivalent computation with inner product[^2]
 Given a ciphertext $(b, a)$ and $swk^j=\big([\text{swk}^{(i)}\_{s\_{in}\rightarrow s\_{out}}]\_j \big)\_{i=0}^L$ for $j=0,1$ 
@@ -111,7 +111,7 @@ Given a ciphertext $(b, a)$ and $swk^j=\big([\text{swk}^{(i)}\_{s\_{in}\rightarr
 2. $t\_1 = \langle d, swk^0 \rangle$ 
 3. $t\_2=\langle d, swk^1\rangle$
 4. $t = \lfloor P^{\-1}\cdot t\_1 \rceil$ (mod down)
-5. $a^{***}=\lfloor P^{\-1}\cdot t\_2 \rceil$ (mod down)
+5. $a^{\dagger\dagger}=\lfloor P^{\-1}\cdot t\_2 \rceil$ (mod down)
 
 
 Notes
