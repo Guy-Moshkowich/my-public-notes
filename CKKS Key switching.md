@@ -8,9 +8,8 @@ The main idea is to subtract the term $a\cdot s\_{in}$  from $a\cdot s\_{in}+m+e
 $ct\_0 \\ \-a\cdot \text{swk}\_0$ :
 
 $$\begin{array}{r}
-
 a\cdot s\_{in}+m+e \\ 
-\underline{\-a( a^\*s\_{out}+s\_{in}+e^\*)}\\
+\overline{\-a( a^\*s\_{out}+s\_{in}+e^\*)}\\
 \-aa^\*s\_{out} + m+e\-ae^\* 
 \end{array}$$
 
