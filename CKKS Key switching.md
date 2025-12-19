@@ -1,8 +1,3 @@
-\-\-\-
-share: "true"
-\-\-\-
-
-
 # CKKS Key switching 
 ## Motivation (First try)
 **First idea,** define  $\text{swk}\_{s\_{in}\rightarrow s\_{out}}:=(a^\* s\_{out}+s\_{in}+e^\*, a^\*) \bmod Q$. This is an encryption of the plaintext $s\_{in}$ w.r.t secret key $s\_{out}$ modulo Q.
