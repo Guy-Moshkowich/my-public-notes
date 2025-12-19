@@ -7,11 +7,12 @@ Let $ct$ be a [R-LWE ciphertext (RLWE)](R-LWE%20ciphertext%20(RLWE).md) $ct = (c
 The main idea is to subtract the term $a\cdot s\_{in}$  from $a\cdot s\_{in}+m+e$ by computing
 $ct\_0 \\ \-a\cdot \text{swk}\_0$ :
 
-$$\begin{array}{r}
+$$\begin{array}{l}
 a\cdot s\_{in}+m+e \\ 
-\overline{\-a( a^\*s\_{out}+s\_{in}+e^\*)}\\
+\-a( a^\*s\_{out}+s\_{in}+e^\*) \\ 
+\hline \rule{4cm}{0.4pt} \\
 \-aa^\*s\_{out} + m+e\-ae^\* 
-\end{array}$$
+\end{array}$$ 
 
 defining a new ciphertext $(ct\_0\-a\cdot swk\_0,\-aa^\*)\bmod Q$  which "encrypts" m w.r.t secret key $s\_{out}$.  note that as $a$ and $a^\*$ are uniformly random than so is their multiplication. 
 #### But this will NOT work!
