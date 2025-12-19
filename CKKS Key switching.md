@@ -60,14 +60,13 @@ This ciphertext encrypts the original message $m$ w.r.t secret key $s\_{out}$
  3. Set $P$ to be a prime of size 64 bits i.e., $P>q\_i$ for all $i$
  4. mod\-up of the decomposition $i$ of $a$: $[a\cdot\hat{q\_i}^{\-1}]\_{q\_i}$ to be modulo $P\cdot Q$ 
  5. multiply the i\-th switch key and the $i$\-th decomposition of $a$, we have
-$$
-\begin{align}
+
+$$\begin{align}
 \big[[a\cdot\hat{q\_i}^{\-1}]\_{q\_i}\big]\_{PQ}\cdot \text{swk}^{(i)}\_{s\_{in}\rightarrow s\_{out}} &= 
 [a\cdot\hat{q\_i}^{\-1}]\_{q\_i}\cdot \text{swk}^{(i)}\_{s\_{in}\rightarrow s\_{out}} \bmod PQ \\ 
 &= \big([a\cdot\hat{q\_i}^{\-1}]\_{q\_i}\cdot a^\*\_i\cdot s\_{out} + [a\cdot \hat{q\_i}^{\-1}]\_{q\_i}\cdot \hat{q\_i}\cdot
 P\cdot s\_{in}+ e^\*\_i[a\cdot\hat{q\_i}^{\-1}]\_{q\_i} , [a\cdot\hat{q\_i}^{\-1}]\_{q\_i} a^\*\_i\big)\bmod PQ
-\end{align}
-$$
+\end{align}$$
 
 7. mod\_down to modulo $P$: 
 $$
