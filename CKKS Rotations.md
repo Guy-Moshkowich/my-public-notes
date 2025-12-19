@@ -25,6 +25,7 @@ share: "true"
 - Let $k$ be a generator of the cyclic group $C\_{n/2}$ which is a subgroup of $\mathbb{Z}\_{2n}^\times$ i.e., $\mathbb{Z}\_{2n}^\times=\{1,k,k^2,\ldots,k^{n/2-1},-1,-k,-k^2,\ldots,-k^{n/2-1}\}$
 -  We consider the powers of $\zeta$ that are associated with $\{1,k,k^2,\ldots,k^{n/2-1}\}$. The rest $n/2$ powers of $\zeta$ are their conjugates (because they are multiply by an involution) 
 -  Evaluating $m(X^k)$ with the ordered zeta's is the same as evaluating $m(X)$ by  the ordered zeta's rotated by one i.e., the slots are rotated by one.  replacing $X$ with $\zeta^k$ we get: 
+
 $$\begin{align}
 &m\big((\zeta)^k\big)=m\big(\zeta^k\big)\\
 &m\big((\zeta^k)^k\big)=m\big(\zeta^{k^2}\big)\\
