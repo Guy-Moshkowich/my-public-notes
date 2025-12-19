@@ -12,6 +12,7 @@ $$\begin{align}
 ct &= (ct\_0,ct\_1)\bmod Q\\
 ct\_{rescaled}&= (\lceil ct\_0/q \rfloor , \lceil ct\_1/q\rfloor) \bmod Q/q
 \end{align}$$
+
 Note: this is how it was implemented in the [original CKKS scheme](./@original%20ckks%20paper%20-%20Homomorphic%20Encryption%20for%20Arithmetic%20of%20Approximate%20Numbers.md) 
 
 ## Correctness
