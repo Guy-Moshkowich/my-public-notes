@@ -69,10 +69,9 @@ P\cdot s\_{in}+ e^\*\_i[a\cdot\hat{q\_i}^{\-1}]\_{q\_i} , [a\cdot\hat{q\_i}^{\-1
 \end{align}$$
 
 7. mod\_down to modulo $P$: 
-$$
-\bigg(P^{\-1}[a\cdot\hat{q\_i}^{\-1}]\_{q\_i}\cdot a^\*\_i\cdot s\_{out} + [a\cdot \hat{q\_i}^{\-1}]\_{q\_i}\cdot \hat{q\_i}\cdot
-s\_{in}+ P^{\-1}\cdot e^\*\_i[a\cdot\hat{q\_i}^{\-1}]\_{q\_i} \ ,P^{\-1}\ [a\cdot\hat{q\_i}^{\-1}]\_{q\_i} a^\*\_i\bigg)\bmod Q
-$$
+
+$$\bigg(P^{\-1}[a\cdot\hat{q\_i}^{\-1}]\_{q\_i}\cdot a^\*\_i\cdot s\_{out} + [a\cdot \hat{q\_i}^{\-1}]\_{q\_i}\cdot \hat{q\_i}\cdot
+s\_{in}+ P^{\-1}\cdot e^\*\_i[a\cdot\hat{q\_i}^{\-1}]\_{q\_i} \ ,P^{\-1}\ [a\cdot\hat{q\_i}^{\-1}]\_{q\_i} a^\*\_i\bigg)\bmod Q$$
 
 6. sum all results: $e\_i^{**}:=P^{\-1}\cdot e^\*\_i[a\cdot\hat{q\_i}^{\-1}]\_{q\_i}$, $a\_i^{**}:=P^{\-1}[a\cdot\hat{q\_i}^{\-1}]\_{q\_i}\cdot a^\*\_i$ 
 > $$t = \sum\_{i=0}^L \big([a\cdot\hat{q\_i}^{\-1}]\_{q\_i}\cdot \text{swk}^{(i)}\_{s\_{in}\rightarrow s\_{out}}\big)= \big(\sum\_{i=0}^L a^{**}\_i\cdot s\_{out}+ a\cdot s\_{in}+ \sum\_{i=0}^L e\_i^{**},\sum\_{i=0}^L a^{**}\_i\big)\bmod Q$$
