@@ -54,14 +54,12 @@ This ciphertext encrypts the original message $m$ w.r.t secret key $s\_{out}$
 
 **Third idea**. The problem with the 2nd idea is the half of the levels are taken by special primes and as security limits the number of levels then this reduce the number of effective levels for homomorphic computation. To solve this, the new idea is to reduce the size of $P$ by reducing the norm of $a$ (the uniform random element of a ciphertext $ct$). smaller $a$ means we need smaller $P$ that divides it and make its norm small when reducing the modulo to Q from modulo QP in the computation above.
 1. Define switching keys for all $i$ by a set of ciphertexts. This is computed during scheme initialization. $$\text{swk}^{(i)}\_{s\_{in}\rightarrow s\_{out}}:=(a^\*\_i\cdot  s\_{out}+ \hat{q\_i}\cdot P\cdot s\_{in}+e^\*\_i, a^\*\_i) \bmod  PQ$$ 
-2. Decompose $a$ by 
-   
-   $ \big([a\cdot\hat{q\_0}^{\-1}]\_{q\_0},\ldots, [a\cdot\hat{q\_L}^{\-1}]\_{q\_L}\big)$ 
+2. Decompose $a$ by  $\big([a\cdot\hat{q\_0}^{\-1}]\_{q\_0},\ldots, [a\cdot\hat{q\_L}^{\-1}]\_{q\_L}\big)$ 
 
    Note by the CRT:  $a=\sum\_{j=0}^L [a]\_{q\_j}\cdot[\hat{q}\_j^{\-1}]\_{q\_j}\cdot\hat{q}\_j=\sum\_{j=0}^L [a\hat{q}\_j^{\-1}]\_{q\_j}\hat{q}\_j \bmod Q = \langle ([a\hat{q}\_j^{\-1}]\_{q\_j})\_j , (\hat{q}\_j)\_j\rangle\bmod Q$ where $\hat{q\_j}:=\prod\_{i\ne j}{q\_i}$ and all components have small norm i.e., $\big|[a\cdot\hat{q\_i}^{\-1}]\_{q\_i}\big|< q\_i$ for $i=0,\ldots,L$
- 4. Set $P$ to be a prime of size 64 bits i.e., $P>q\_i$ for all $i$
- 5. mod\-up of the decomposition $i$ of $a$: $[a\cdot\hat{q\_i}^{\-1}]\_{q\_i}$ to be modulo $P\cdot Q$ 
- 6. multiply the i\-th switch key and the $i$\-th decomposition of $a$, we have
+ 3. Set $P$ to be a prime of size 64 bits i.e., $P>q\_i$ for all $i$
+ 4. mod\-up of the decomposition $i$ of $a$: $[a\cdot\hat{q\_i}^{\-1}]\_{q\_i}$ to be modulo $P\cdot Q$ 
+ 5. multiply the i\-th switch key and the $i$\-th decomposition of $a$, we have
 $$
 \begin{align}
 \big[[a\cdot\hat{q\_i}^{\-1}]\_{q\_i}\big]\_{PQ}\cdot \text{swk}^{(i)}\_{s\_{in}\rightarrow s\_{out}} &= 
