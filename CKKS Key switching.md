@@ -35,7 +35,7 @@ The bx part of $ct\_{s\_{in}\rightarrow s\_{out}}$  is:
 $$\begin{array}{l} 
 a\cdot s\_{in}+m+e \bmod Q\\
 \- \lfloor a\cdot P^{\-1} ( a^\*s\_{out}+P\cdot s\_{in}+e^\*)\rceil\bmod Q\\
-\hline \rule{4cm}{0.4pt} \\
+\hline \rule{6cm}{0.4pt} \\
 \-P^{\-1}aa^\*s\_{out} + m+ \underbrace{e\-P^{\-1}ae^\* +e\_{\text{round}}}\_{\text{small error}}\bmod Q 
 \end{array}$$ 
 
