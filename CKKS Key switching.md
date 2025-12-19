@@ -10,9 +10,7 @@ $ct\_0 \\ \-a\cdot \text{swk}\_0$ :
 $$\begin{array}{r}
 
 a\cdot s\_{in}+m+e \\ 
-\underline{
-\-a( a^\*s\_{out}+s\_{in}+e^\*)
-}\\
+\underline{\-a( a^\*s\_{out}+s\_{in}+e^\*)}\\
 \-aa^\*s\_{out} + m+e\-ae^\* 
 \end{array}$$
 
