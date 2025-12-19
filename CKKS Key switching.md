@@ -73,10 +73,13 @@ P\cdot s\_{in}+ e^\*\_i[a\cdot\hat{q\_i}^{\-1}]\_{q\_i} , [a\cdot\hat{q\_i}^{\-1
 $$\bigg(P^{\-1}[a\cdot\hat{q\_i}^{\-1}]\_{q\_i}\cdot a^\*\_i\cdot s\_{out} + [a\cdot \hat{q\_i}^{\-1}]\_{q\_i}\cdot \hat{q\_i}\cdot
 s\_{in}+ P^{\-1}\cdot e^\*\_i[a\cdot\hat{q\_i}^{\-1}]\_{q\_i} \ ,P^{\-1}\ [a\cdot\hat{q\_i}^{\-1}]\_{q\_i} a^\*\_i\bigg)\bmod Q$$
 
-6. sum all results: $e\_i^{**}:=P^{\-1}\cdot e^\*\_i[a\cdot\hat{q\_i}^{\-1}]\_{q\_i}$, $a\_i^{**}:=P^{\-1}[a\cdot\hat{q\_i}^{\-1}]\_{q\_i}\cdot a^\*\_i$ 
-> $$t = \sum\_{i=0}^L \big([a\cdot\hat{q\_i}^{\-1}]\_{q\_i}\cdot \text{swk}^{(i)}\_{s\_{in}\rightarrow s\_{out}}\big)= \big(\sum\_{i=0}^L a^{**}\_i\cdot s\_{out}+ a\cdot s\_{in}+ \sum\_{i=0}^L e\_i^{**},\sum\_{i=0}^L a^{**}\_i\big)\bmod Q$$
+6. sum all results: $e\_i^\dagger:=P^{\-1}\cdot e^\*\_i[a\cdot\hat{q\_i}^{\-1}]\_{q\_i}$, $a\_i^\dagger:=P^{\-1}[a\cdot\hat{q\_i}^{\-1}]\_{q\_i}\cdot a^\*\_i$ 
+> $$t = \sum\_{i=0}^L \big([a\cdot\hat{q\_i}^{\-1}]\_{q\_i}\cdot \text{swk}^{(i)}\_{s\_{in}\rightarrow s\_{out}}\big)= \big(\sum\_{i=0}^L a^\dagger\_i\cdot s\_{out}+ a\cdot s\_{in}+ \sum\_{i=0}^L e\_i^\dagger,\sum\_{i=0}^L a^\dagger\_i\big)\bmod Q$$
 
-7. subtract from original ciphertext: $$ct\_0\- t=as\_{in}+m+e\-t=a^{***}s\_{out}+m+e+e^{***}$$ where $a^{***}:= \sum\_{i=0}^L a^{**}\_i$ and $e^{***}:=\sum\_{i=0}^L e\_i^{**}$
+7. subtract from original ciphertext: 
+
+$$ct\_0\- t=as\_{in}+m+e\-t=a^{\dagger\dagger}s\_{out}+m+e+e^{\dagger\dagger}$$
+ where $a^{\dagger\dagger}:= \sum\_{i=0}^L a^{\dagger}\_i$ and $e^{\dagger\dagger}:=\sum\_{i=0}^L e\_i^\dagger$
 
 **Fourth idea**. The problem with the 3rd idea that you need more memory to store the extra switch keys and more computation is being done for each key switch. To balance this, the new idea is to use batches of $q\_i$'s, $Q\_j:=\prod\_{j\alpha}^{j(\alpha+1)} q\_i$  for decomposing $a$ to fewer smaller polynomials.
 3. Decompose $a$ by $$ \big([a\cdot\hat{Q\_0}^{\-1}]\_{Q\_0},\ldots, [a\cdot\hat{Q\_k}^{\-1}]\_{Q\_k}\big)$$ 
