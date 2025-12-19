@@ -32,10 +32,10 @@ define $ct\_{s\_{in}\rightarrow s\_{out}}:=ct\_0 \- \lfloor P^{\-1}\cdot a\cdot 
 
 The bx part of $ct\_{s\_{in}\rightarrow s\_{out}}$  is:
 
-$$\begin{array}{r} 
+$$\begin{array}{l} 
 a\cdot s\_{in}+m+e \bmod Q\\
 \- \lfloor a\cdot P^{\-1} ( a^\*s\_{out}+P\cdot s\_{in}+e^\*)\rceil\bmod Q\\
-\hline 
+\hline \rule{4cm}{0.4pt} \\
 \-P^{\-1}aa^\*s\_{out} + m+ \underbrace{e\-P^{\-1}ae^\* +e\_{\text{round}}}\_{\text{small error}}\bmod Q 
 \end{array}$$ 
 
