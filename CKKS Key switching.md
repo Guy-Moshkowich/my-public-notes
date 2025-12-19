@@ -82,7 +82,9 @@ $$ct\_0\- t=as\_{in}+m+e\-t=a^{\dagger\dagger}s\_{out}+m+e+e^{\dagger\dagger}$$
  where $a^{\dagger\dagger}:= \sum\_{i=0}^L a^{\dagger}\_i$ and $e^{\dagger\dagger}:=\sum\_{i=0}^L e\_i^\dagger$
 
 **Fourth idea**. The problem with the 3rd idea that you need more memory to store the extra switch keys and more computation is being done for each key switch. To balance this, the new idea is to use batches of $q\_i$'s, $Q\_j:=\prod\_{j\alpha}^{j(\alpha+1)} q\_i$  for decomposing $a$ to fewer smaller polynomials.
-3. Decompose $a$ by $$ \big([a\cdot\hat{Q\_0}^{\-1}]\_{Q\_0},\ldots, [a\cdot\hat{Q\_k}^{\-1}]\_{Q\_k}\big)$$ 
+Decompose $a$ by 
+
+$$ \big([a\cdot\hat{Q\_0}^{\-1}]\_{Q\_0},\ldots, [a\cdot\hat{Q\_k}^{\-1}]\_{Q\_k}\big)$$ 
  where $\hat{Q\_j}:=\prod\_{i\ne j}{Q\_i}$ and all components have small norm i.e., $\big|[a\cdot\hat{Q\_i}^{\-1}]\_{Q\_i}\big|< Q\_i$ for $i=0,\ldots,k$
    Note: $$a=\sum\_{j=0}^k [a\hat{Q}\_j^{\-1}]\_{Q\_j}\hat{Q}\_j \bmod Q $$
    note: an alternative is to decompose by $([a]\_{Q\_0},\ldots,[a]\_{Q\_k})$ 
