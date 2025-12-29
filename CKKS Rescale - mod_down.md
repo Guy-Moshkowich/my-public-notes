@@ -30,7 +30,7 @@ i.e., $ct^\prime:=(\lceil d\_0/q \rfloor , \lceil d\_1/q \rfloor,\lceil d\_2/q \
 ## In RNS CKKS scheme (CRT) [^2]
 The modulo of level $\ell$ is a prime $q\_\ell$ with size close to the size of the scheme scale parameter.
 Let $ct=([ct]\_{q\_j})\_{0\le j\le L}$. The rescale is computed: $ct^\prime=\text{RS}\_{\ell\to \ell\-1}(ct)$ where $$ct\_i^{(j)}=[q\_\ell]\_j^{\-1}([ct\_i]\_{q\_j}\-[ct\_i]\_{q\_\ell})$$ for $i=0,1$ and $0\le j\le\ell\-1$.
-Subtraction of $[ct\_i]\_{q\_\ell}$ from each component \- rounds the coefficients to s nearest integer that is dividable by $q\_\ell$. Then, multiplying the j\-th CRT  component with $[q\_\ell]\_j^{\-1}$ (the inverse of $q\_\ell$ in $\mathbb{Z}\_{q\_j}$) will be CRT\-composed to the integer $\lfloor q^{\-1}\_\ell\cdot c\_i\rceil$ which is exactly the result of rescale.
+Subtraction of $[ct\_i]\_{q\_\ell}$ from each component \- rounds the coefficients to s nearest integer that is dividable by $q\_\ell$. Then, multiplying the j\-th CRT  component with $[q\_\ell]\_j^{\-1}$ (the inverse of $q\_\ell$ in $\mathbb{Z}\_{q\_j}$) will be CRT\-composed to the integer $\lfloor q^{\-1}\_\ell\cdot c\_i\rceil$ which is exactly the result of rescale. note: to understand why $[ap]\_{q\_\ell}/p$ in integers can be mapped to multiplying by modulo inverse in CRT $[ap]\_{q\_\ell}\cdot [p^{\-1}]\_{q\_\ell}$  \- you need to multiply the results by $[p]\_{q\_\ell}$ and see that you get $[ap]\_{q\_\ell}$ so this is really the same as integer division.
 
 The idea is that $c\_i\-[c\_i]\_{q\_\ell}$ is an integer that when divided by $q\_\ell$ the result is an integer. 
 This is correct as $[c\_i]\_{q\_\ell}$ is the reminder of $c\_i$ divided by $q\_\ell$ so removing the reminder leave us with a number that is divisible by $q\_\ell$.
