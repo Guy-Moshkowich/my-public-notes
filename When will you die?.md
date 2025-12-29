@@ -10,4 +10,4 @@ but you can use statistics of people who are similar to you in age, health and l
 Reference:[@Die with zero](./@Die%20with%20zero.md)
 
 
-## Created 2024-09-24 19:41
+## Created 2024\-09\-24 19:41
