@@ -27,9 +27,11 @@ Note: $v$ can be computed once and reuse when computing $[x]\_{p\_i}$ for each $
 HEAAN\-RNS [^3] scheme requires all primes $q\_i,p\_i$ to be close to some prime $q$. More recent implementation of CKKS do not hold this requirements and the values of $q\_i$ and $p\_i$ are independent and can have large differences.
 
 The above requirement of HEAAN\-RNS enable a simpler computation (without computing $v$) than the above and allow inaccuracy in the computation of FBC.
+
 $$
 [x]\_{p\_j}=\sum\_{i=0}^{\ell}\bigg( \big[[x]\_{q\_i}\cdot [\hat{q\_i}^{\-1}]\_{q\_i}\big]\_{q\_i}\cdot [\hat{q\_i}]\_{p\_j} \bmod {p\_j}\bigg) \bmod p\_j
 $$
+
 This computation is also mentioned in [^2] and I've implemented it here[^5]
 The FBC algorithm was originally introduced in [^4].
 ## Created 2024\-07\-07 15:54
