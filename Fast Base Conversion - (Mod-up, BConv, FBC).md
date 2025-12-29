@@ -17,6 +17,7 @@ $$\begin{align}
 \end{align}$$
 
 
+
 This computation is due Shai et.al[^1].
 Note: $v$ can be computed once and reuse when computing $[x]\_{p\_i}$ for each $p\_i$.
 
