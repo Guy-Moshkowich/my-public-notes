@@ -17,9 +17,8 @@ $$\begin{align}
 \end{align}$$
 
 
-
 This computation is due Shai et.al[^1].
-Note: $v$ can be computed once and reuse when computing $[x]\_{p\_i}$ for each $p\_i$.
+Note: $v$ can be computed once and reuse when computing $[x]\_{p\_i}$ for each $p\_i$. Although in GPU implementation we compute it multiple times as there are common terms in the left sum and the right sum and we want to minimize these calls.
 
 ## RNS\-HEAAN Fast base conversion formula
 HEAAN\-RNS [^3] scheme requires all primes $q\_i,p\_i$ to be close to some prime $q$. More recent implementation of CKKS do not hold this requirements and the values of $q\_i$ and $p\_i$ are independent and can have large differences.
