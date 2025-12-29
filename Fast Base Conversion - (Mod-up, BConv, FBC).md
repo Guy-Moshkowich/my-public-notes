@@ -10,14 +10,12 @@ $$(1)\ \ \ \ \ \ \ x=\sum\_i [x]\_{q\_i}\cdot [\hat{q\_i}^{\-1}]\_{q\_i}\cdot \h
 Divide (1) by $q$ (as real number and not as inverse in $\mathbb{Z}\_q$), floor and add $v$ to both sides of the equation, we get $$v = \Bigg\lfloor\bigg( \sum\_i [x]\_{q\_i}\cdot [\hat{q\_i}^{\-1}]\_{q\_i}\cdot \hat{q\_i}\bigg)/q \Bigg\rfloor=\bigg\lfloor \sum\_i \frac{[x]\_{q\_i}\cdot [\hat{q\_i}^{\-1}]\_{q\_i}}{q\_i}\bigg \rfloor$$
 Now, we ready to compute $[x]\_{p\_i}$,
 
-$$
-\begin{align}
+$$\begin{align}
 [x]\_{p\_j}&=\bigg[\sum\_{i=0}^{\ell} [x]\_{q\_i}\cdot [\hat{q\_i}^{\-1}]\_{q\_i}\cdot [\hat{q\_i}]\_{p\_j}\-[v]\_{p\_j}\cdot[q]\_{p\_j}\bigg]\_{p\_j}\\
 &=
 \sum\_i\bigg[\big[ [x]\_{q\_i}\cdot [\hat{q\_i}^{\-1}]\_{q\_i} \big]\_{q\_i}\cdot[\hat{q\_i}]\_{p\_j}\bigg]\_{p\_j} \- \Bigg[\bigg\lfloor\sum\_i \frac{\big[[x]\_{q\_i}\cdot [\hat{q\_i}^{\-1}]\_{q\_i}\big]\_{q\_i}}{q\_i}\bigg\rfloor\Bigg]\_{p\_j}\cdot [q]\_{p\_j}
+\end{align}$$
 
-\end{align}
-$$
 
 
 This computation is due Shai et.al[^1].
