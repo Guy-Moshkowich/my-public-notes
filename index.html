@@ -1,0 +1,12 @@
+---
+layout: default
+title: Notes
+---
+<h1>All Notes</h1>
+<ul>
+  {% for page in site.pages %}
+    {% if page.title and page.name != "index.html" %}
+      <li><a href="{{ page.url | relative_url }}">{{ page.title }}</a></li>
+    {% endif %}
+  {% endfor %}
+</ul>
